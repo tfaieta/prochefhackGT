@@ -12,7 +12,7 @@ export default class Login extends Component {
                         source={require('../../images/Logomakr_7Cqr0x.png')}
                     />
 
-                    <Text style={styles.title}>An App Made For The Creatively Uncreative</Text>
+                    <Text style={styles.title}></Text>
                 </View>
                 <View style={styles.formContainer}>
                     <LoginForm />
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         height: 200,
-        width: 200
+        width: 258
     },
     title: {
         marginTop: 10,
