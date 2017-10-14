@@ -15,14 +15,16 @@ export default class InfoGather extends React.Component {
     render() {
         return (
             <View>
-                <Text>What's in your pantry?</Text>
-                <RkTextInput placeholder="Enter your ingredient." onChange={(text) => this.setState({ text })} />
-                <Dropdown />
-                <RkButton></RkButton>
-                <Text>
-
-                </Text>
+                <Text style={styles.center}>What's in your pantry?</Text>
+                <RkTextInput style={styles.center} autoFocus={true} placeholder="Enter your ingredient." onChange={(text) => this.setState({ text })} />
+                {this.state.text==''? null :<Dropdown text={this.state.text} />}
             </View>
         );
     };
 }
+
+const styles = StyleSheet.create({
+    center: {
+        textAlign:"center"
+    }
+})
