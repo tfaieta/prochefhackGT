@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, TextInput, TouchableOpacity, Text, StatusBar, Button} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import firebase from 'firebase';
 
 export default class LoginForm extends Component {
@@ -10,8 +11,9 @@ export default class LoginForm extends Component {
 
         const {email, password} = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(() => {
+            .then(() => { //Success
                 this.setState({error: '', loading: false});
+                Actions.infoGather();
             })
             .catch(() => {
                 //Login was not successful, let's create a new account
