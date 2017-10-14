@@ -14,8 +14,6 @@ export default class Login extends Component {
                         style={styles.logo}
                         source={require('../../images/Prochef.png')}
                     />
-
-                    <Text style={styles.title}></Text>
                 </View>
                 <View style={styles.formContainer}>
                     <LoginForm />

@@ -1,30 +1,30 @@
-import React, {Component} from 'react';
-import {StyleSheet, View, TextInput, TouchableOpacity, Text, StatusBar, Button} from 'react-native';
-import {Actions} from 'react-native-router-flux';
+import React, { Component } from 'react';
+import { StyleSheet, View, TextInput, TouchableOpacity, Text, StatusBar, Button } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 
 export default class LoginForm extends Component {
-    state = {email: '', password: '', error: '', loading: false};
+    state = { email: '', password: '', error: '', loading: false };
 
     onLoginPress() {
-        this.setState({error: '', loading: true});
+        this.setState({ error: '', loading: true });
 
-        const {email, password} = this.state;
+        const { email, password } = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(() => { //Success
-                this.setState({error: '', loading: false});
+                this.setState({ error: '', loading: false });
                 Actions.infoGather();
             })
             .catch(() => {
                 //Login was not successful, let's create a new account
                 firebase.auth().createUserWithEmailAndPassword(email, password)
                     .then(() => {
-                        this.setState({error: '', loading: false});
+                        this.setState({ error: '', loading: false });
                     })
                     .catch(() => {
-                        this.setState({error: 'Authentication failed.', loading: false});
+                        this.setState({ error: 'Authentication failed.', loading: false });
                     });
-                })
+            })
     }
 
     ;
@@ -33,7 +33,7 @@ export default class LoginForm extends Component {
         if (this.state.loading) {
         }
 
-        return <Button color={'#FFF'} onPress={this.onLoginPress.bind(this)} title="Log in"/>;
+        return <Button color={'#FFF'} onPress={this.onLoginPress.bind(this)} title="Log in" />;
     }
 
     render() {
@@ -45,7 +45,7 @@ export default class LoginForm extends Component {
                 <TextInput
                     label='Email Address'
                     value={this.state.email}
-                    onChangeText={email => this.setState({email})}
+                    onChangeText={email => this.setState({ email })}
                     placeholder="Username or Email"
                     placeholderTextColor="#FFF"
                     returnKeyType="next"
@@ -59,7 +59,7 @@ export default class LoginForm extends Component {
                     label='Password'
                     placeholder="Password"
                     value={this.state.password}
-                    onChangeText={password => this.setState({password})}
+                    onChangeText={password => this.setState({ password })}
                     placeholderTextColor="#FFF"
                     returnKeyType="go"
                     secureTextEntry={true}
@@ -68,7 +68,7 @@ export default class LoginForm extends Component {
                 />
                 <Text style={styles.errorTextStyle}>{this.state.error}</Text>
                 <TouchableOpacity style={styles.loginButtonContainer} >
-                {this.renderButtonOrSpinner()}
+                    {this.renderButtonOrSpinner()}
                 </TouchableOpacity>
             </View>
         );
