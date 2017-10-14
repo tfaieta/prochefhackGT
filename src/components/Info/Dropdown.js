@@ -52,10 +52,10 @@ function processData(){ //load array into map
 
 const ss = StyleSheet.create({
     item: {
-        padding: 18,
-        margin: 5,
+        padding:18,
         borderWidth: 1,
-        borderRadius: 7,
-        borderColor: "#333"
+        borderRadius:7,
+        borderColor: "#333",
+        marginBottom: 100
     }
 })
