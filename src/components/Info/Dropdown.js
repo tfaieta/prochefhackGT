@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text , FlatList} from 'react-native';
+import {StyleSheet, Text , FlatList} from 'react-native';
 
-export default class Suggest extends React.Component {
+export default class Dropdown extends React.Component {
     render() {
-        return <FlatList data={this.getData()} renderItem = {({item}) => <Text>{item.key}</Text>}/>
+        return <FlatList data={this.getData()} renderItem = {({item}) => <Text style={ss.item}>{item.key}</Text>}/>
     };
     getData()
     {
@@ -15,3 +15,13 @@ export default class Suggest extends React.Component {
         return [{key:"1"},{key:"2"}];
     };
 }
+
+const ss = StyleSheet.create({
+    item: {
+        padding:18,
+        margin:5,
+        borderWidth: 1,
+        borderRadius:7,
+        borderColor: "#333"
+    }
+})
