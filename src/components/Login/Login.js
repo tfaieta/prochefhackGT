@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text, KeyboardAvoidingView } from 'react-native';
 import LoginForm from './LoginForm';
 import {Actions} from 'react-native-router-flux';
 import {RkButton} from 'react-native-ui-kitten';
 
+
 export default class Login extends Component {
     render() {
         return (
-            <View style={styles.container}>
+            <KeyboardAvoidingView behavior="padding" style={styles.container}>
                 <View style={styles.logoContainer}>
                     <Image
                         style={styles.logo}
@@ -21,7 +22,7 @@ export default class Login extends Component {
                 </View>
 
             <RkButton onPress={() => Actions.infoGather()}> Skip </RkButton>
-            </View>
+            </KeyboardAvoidingView>
         );
     }
 }
