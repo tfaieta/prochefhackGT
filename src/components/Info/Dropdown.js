@@ -7,11 +7,11 @@ export default class Dropdown extends React.Component {
     {
         super(props);
         this.dict = processData();
-        console.log(this.dict);
+        // console.log(this.dict);
     }
 
     render() {
-        return <FlatList data={this.getData()} renderItem={({ item }) => <Text style={ss.item}>{item.key}</Text>} />
+        return <FlatList data={this.getData()} renderItem={({ item }) => (<Text style={ss.item}>{item.key}</Text>)} />
     };
 
     getData() {

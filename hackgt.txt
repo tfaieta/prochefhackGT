@@ -1,0 +1,5 @@
+Quiz mode -> ask for ingredients -> show rest of ingredients 
+
+start with prompting user for ingredients
+
+i.e. eggs (dropdown menu)
