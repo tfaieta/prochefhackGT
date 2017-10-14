@@ -21,7 +21,7 @@ export default class App extends React.Component {
       <Router>
         <Stack key = "root">
           <Scene key = "login" component={Login} hideNavBar/>
-          <Scene key = "infoGather" component={InfoGather}/>
+          <Scene key = "infoGather" component={InfoGather} hideNavBar/>
         </Stack>
       </Router>
     );

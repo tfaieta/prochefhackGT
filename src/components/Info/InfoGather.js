@@ -17,8 +17,8 @@ export default class InfoGather extends React.Component {
             <View>
                 <Text style={styles.center}>What's in your pantry?</Text>
                 <RkTextInput
-                 autoFocus={true} placeholder="Enter your ingredient." onChange={(text) => this.setState({ text })} />
-                {this.state.text==''? null :<Dropdown text={this.state.text} />}
+                    autoFocus={true} placeholder="Enter your ingredients" onChangeText={(text) => this.setState({ text })} />
+                    {this.state.text.length < 2 ? null : <Dropdown text={this.state.text} />}
             </View>
         );
     };
@@ -26,6 +26,6 @@ export default class InfoGather extends React.Component {
 
 const styles = StyleSheet.create({
     center: {
-        textAlign:"center"
+        textAlign: "center"
     }
 })
