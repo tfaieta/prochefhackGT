@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, FlatList } from 'react-native';
-var data = require('./data.json')
+var data = require('./data.json');
 export default class Dropdown extends React.Component {
 
     constructor(props)
@@ -11,7 +11,15 @@ export default class Dropdown extends React.Component {
     }
 
     render() {
+<<<<<<< HEAD
         return <FlatList data={this.getData()} renderItem={({ item }) => (<Text style={ss.item}>{item.key}</Text>)} />
+=======
+        return <FlatList data={this.getData()} renderItem={({ item }) => <Text style={ss.item}>{item.key}</Text>} />
+
+        return <FlatList data={this.getData()} renderItem={({ item }) => <Text style={ss.item}>{item.key}
+        </Text>} />
+
+>>>>>>> 095a761628170f4e2ea6f1a0aa70b85c7e73a6f2
     };
 
     getData() {
