@@ -16,7 +16,8 @@ export default class InfoGather extends React.Component {
         return (
             <View>
                 <Text style={styles.center}>What's in your pantry?</Text>
-                <RkTextInput style={styles.center} autoFocus={true} placeholder="Enter your ingredient." onChange={(text) => this.setState({ text })} />
+                <RkTextInput
+                 autoFocus={true} placeholder="Enter your ingredient." onChange={(text) => this.setState({ text })} />
                 {this.state.text==''? null :<Dropdown text={this.state.text} />}
             </View>
         );

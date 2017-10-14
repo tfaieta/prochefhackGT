@@ -12,7 +12,7 @@ export default class Login extends Component {
                 <View style={styles.logoContainer}>
                     <Image
                         style={styles.logo}
-                        source={require('../../images/Logomakr_7Cqr0x.png')}
+                        source={require('../../images/Prochef.png')}
                     />
 
                     <Text style={styles.title}></Text>
