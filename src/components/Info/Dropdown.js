@@ -19,9 +19,9 @@ export default class Dropdown extends React.Component {
 const ss = StyleSheet.create({
     item: {
         padding:18,
-        margin:5,
         borderWidth: 1,
         borderRadius:7,
-        borderColor: "#333"
+        borderColor: "#333",
+        marginBottom: 100
     }
 })

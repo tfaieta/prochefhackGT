@@ -14,10 +14,10 @@ export default class InfoGather extends React.Component {
     }
     render() {
         return (
-            <View>
+            <View style={styles.break}>
                 <Text style={styles.center}>What's in your pantry?</Text>
                 <RkTextInput
-                 autoFocus={true} placeholder="Enter your ingredient." onChange={(text) => this.setState({ text })} />
+                 autoFocus={true} placeholder="Enter your ingredient." onChangeText={(text) => this.setState({ text })} />
                 {this.state.text==''? null :<Dropdown text={this.state.text} />}
             </View>
         );
@@ -26,6 +26,10 @@ export default class InfoGather extends React.Component {
 
 const styles = StyleSheet.create({
     center: {
-        textAlign:"center"
+        textAlign:"center",
+        justifyContent: 'center'
+    },
+    break: {
+        top:50
     }
 })
